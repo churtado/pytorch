@@ -17,7 +17,42 @@ x = torch.tensor([5.5, 3])
 
 # create tensor from existing
 x = x.new_ones(5, 3, dtype=torch.double)
+#print(x)
 
 x = torch.randn_like(x, dtype=torch.float)
+#print(x)
 
-print(x)
+# size is a tuple
+#print(x.size())
+
+y = torch.rand(5,3)
+#print(x+y)
+
+# addition in place, in-place mutators use underscore
+y.add_(x)
+#print(y)
+
+# resizing:
+x = torch.randn(4,4)
+y = x.view(16)
+z = x.view(-1, 8) # the size -1 is inferred from other dimensions
+
+#print(x.size(), y.size(), z.size())
+#print(x)
+#print(z)
+
+x = torch.randn(1)
+#print(x)
+#print(x.item())
+
+# from tensor to numpy
+a = torch.ones(5)
+#print(a)
+
+b = a.numpy()
+#print(b)
+
+a.add_(1)
+#print(a)
+#print(b) # see how the derived numpy array changes value too!!
+
