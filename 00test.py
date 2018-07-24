@@ -1,3 +1,4 @@
+#https://medium.com/datathings/neural-networks-and-backpropagation-explained-in-a-simple-way-f540a3611f5e
 from __future__ import print_function
 import torch
 import numpy as np
